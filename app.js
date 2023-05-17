@@ -13,3 +13,24 @@
 - 'screenY' - The y position of the mouse click relative to the screen
 */
 
+const logo = document.querySelector('img');
+
+function onClick(e){
+    //console.log(e.target);
+    //e.target.style.backgroundColor = 'black';
+    //console.log(e.timeStamp);
+    //console.log(e.offsetX);
+}
+
+logo.addEventListener('click', onClick);
+logo.addEventListener('drag', onDrag);
+
+document.querySelector('a').addEventListener('click', function(e){
+    e.preventDefault(); // Prevents default behavior, in this case wont open link
+    console.log('Link was clicked');
+});
+
+function onDrag(e){
+    document.querySelector('h1').textContent = `X ${e.clientX} Y ${e.clientY}`;
+}
+
